@@ -188,7 +188,6 @@
       justify-content: center;
       align-items: center;
       position: relative;
-      perspective: 1000px;
     }
     .book-glow {
       position: absolute;
@@ -204,26 +203,15 @@
       height: 460px;
       border-radius: 8px;
       background: var(--slate-darker);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
       display: flex;
       flex-direction: column;
       justify-content: stretch;
       align-items: stretch;
       overflow: hidden;
-      animation: float 5s ease-in-out infinite;
       z-index: 1;
-      transform: rotateY(-15deg) rotateX(5deg);
     }
-    /* Book spine shading */
-    .book::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 25px;
-      background: linear-gradient(90deg, rgba(0,0,0,0.4) 0%, rgba(255,255,255,0.1) 40%, rgba(0,0,0,0.2) 100%);
-      border-right: 1px solid rgba(0,0,0,0.5);
-      z-index: 2;
-    }
+
     /* Subtle background image overlay for the cover (like the plant in the original) */
     .book img {
       width: 100%;
@@ -700,7 +688,7 @@
         <div class="book-wrap fade-up visible" style="transition-delay: 0.2s;">
           <div class="book-glow"></div>
           <div class="book">
-            <img src="cover.jpg" alt="Capa do E-book A Arte da Conexão Eficaz">
+            <img src="cover.jpg?v=1.1" alt="Capa do E-book A Arte da Conexão Eficaz">
           </div>
         </div>
       </div>
