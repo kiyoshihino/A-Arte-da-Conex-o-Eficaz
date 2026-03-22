@@ -200,10 +200,11 @@
     .book {
       position: relative;
       width: 100%;
-      max-width: 480px;
+      max-width: 500px;
+      aspect-ratio: 1 / 1;
       margin: 0 auto;
       border-radius: 12px;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
       display: block;
       overflow: hidden;
       z-index: 1;
@@ -213,7 +214,8 @@
     .book img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      background: black;
       display: block;
     }
 
@@ -685,7 +687,7 @@
         <div class="book-wrap fade-up visible" style="transition-delay: 0.2s;">
           <div class="book-glow"></div>
           <div class="book">
-            <img src="cover.jpg?v=1.1" alt="Capa do E-book A Arte da Conexão Eficaz">
+            <img src="cover.jpg?v=1.2" alt="Capa do E-book A Arte da Conexão Eficaz">
           </div>
         </div>
       </div>
