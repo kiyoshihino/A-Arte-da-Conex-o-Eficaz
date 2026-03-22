@@ -349,26 +349,37 @@
     .author-image-wrapper {
       position: relative;
     }
-    .author-image-placeholder {
+    .author-photo {
       width: 100%;
       height: 100%;
       min-height: 450px;
-      background: var(--slate-dark);
-      border-radius: 8px;
-      border: 2px solid rgba(255,255,255,0.05);
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="%238F9F66" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 80px;
-      position: relative;
-      overflow: hidden;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      border: 3px solid rgba(255,255,255,0.05);
+      transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+      display: block;
     }
-    .author-image-placeholder::after {
+    .author-image-wrapper:hover .author-photo {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 25px 60px rgba(230, 122, 38, 0.2);
+      border-color: rgba(230, 122, 38, 0.4);
+    }
+    .author-image-wrapper::after {
       content: '';
       position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 40%;
-      background: linear-gradient(0deg, var(--slate), transparent);
+      top: -15px; right: -15px; bottom: -15px; left: -15px;
+      border: 1px solid rgba(230, 122, 38, 0.2);
+      border-radius: 16px;
+      z-index: -1;
+      opacity: 0;
+      transition: all 0.5s ease;
+      transform: scale(0.95);
+    }
+    .author-image-wrapper:hover::after {
+      opacity: 1;
+      transform: scale(1);
     }
     .author-tag {
       position: absolute;
@@ -645,7 +656,7 @@
       .hero-inner { text-align: center; }
       .hero-lead { margin: 0 auto 30px; }
       .book-wrap { margin-top: 20px; }
-      .author-image-placeholder { min-height: 350px; }
+      .author-photo { min-height: 350px; }
       .section-header.left { text-align: center; }
       .section-header.left .divider { margin: 24px auto 0; }
     }
@@ -752,8 +763,7 @@
     <div class="container--wide">
       <div class="author-grid">
         <div class="author-image-wrapper fade-up">
-          <!-- Placeholder para a foto do autor caso ele envie a imagem no futuro, ajustado com a paleta -->
-          <div class="author-image-placeholder"></div>
+          <img src="author.jpg?v=1.0" alt="Evandro Xavier" class="author-photo">
           <div class="author-tag">AUTOR</div>
         </div>
         <div class="author-content fade-up" style="transition-delay:0.2s;">
