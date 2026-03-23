@@ -442,33 +442,49 @@
     .pillars-section { background: var(--off-white); }
     .pillars-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
     }
     .pillar-card {
       background: var(--white);
-      border-top: 6px solid var(--slate);
-      padding: 40px 30px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-      border-radius: 4px;
-      text-align: center;
-      transition: transform 0.3s, border-color 0.3s;
+      padding: 50px 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      border-radius: 20px;
+      border: 1px solid rgba(0,0,0,0.03);
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
     }
     .pillar-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--orange);
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      border-color: rgba(230, 122, 38, 0.2);
     }
     .pillar-num {
+      position: absolute;
+      top: -20px;
+      right: -10px;
       font-family: var(--font-display);
-      font-size: 4rem;
-      color: var(--olive);
+      font-size: 8rem;
+      color: var(--gray-light);
       line-height: 1;
-      margin-bottom: 15px;
-      opacity: 0.3;
-      transition: opacity 0.3s;
+      opacity: 0.4;
+      z-index: 0;
+      transition: transform 0.5s ease, color 0.5s ease, opacity 0.5s ease;
+      font-weight: 800;
     }
-    .pillar-card:hover .pillar-num { opacity: 1; }
+    .pillar-card:hover .pillar-num {
+      color: var(--orange);
+      opacity: 0.1;
+      transform: scale(1.05) translate(-10px, 10px);
+    }
     .pillar-card h3 {
+      position: relative;
+      z-index: 1;
       font-family: var(--font-display);
       font-size: 2rem;
       color: var(--slate-darker);
@@ -476,8 +492,11 @@
       letter-spacing: 0.02em;
     }
     .pillar-card p {
-      font-size: 0.9rem;
+      position: relative;
+      z-index: 1;
+      font-size: 1rem;
       color: var(--text-muted);
+      line-height: 1.6;
     }
 
     /* ── BENEFITS SECTION ── */
