@@ -442,8 +442,15 @@
     .pillars-section { background: var(--off-white); }
     .pillars-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: 1fr;
       gap: 30px;
+      padding-top: 10px;
+    }
+    @media (min-width: 650px) {
+      .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .pillars-grid { grid-template-columns: repeat(4, 1fr); }
     }
     .pillar-card {
       background: var(--white);
